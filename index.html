@@ -5,25 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Game</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="game.js" defer></script>
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="main.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="game">
+    <div class="container">
+        <h1 class="title">
+            MEMORY GAME
+        </h1>
+        <div class="instruction">
+            Choose the size of the playing field:
+        </div>
         <div class="controls">
-            <button class="start">START</button>
-            <div class="stats">
-                <div class="moves">0 moves</div>
-                <div class="time">time: 0 sec</div>
+            <div class="level-size">
+                <div class="range">
+                    <div class="field">
+                        <div class="value left">2</div>
+                        <input type="range" min="2" max="16" value="4" step="2" />
+                        <div class="value right">16</div>
+                    </div>
+                </div>
+                <div class="slider-value">
+                    <span>4</span>
+                    ×
+                    <span>4</span>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
             </div>
         </div>
-        <div class="game-board">
-            <div class="board" data-size="4"></div>
-            <div class="win"></div>
-        </div>
+    </div>
+
+    <div class="footer">
+        Design by Egoshin Alexey
     </div>
 </body>
 </html>
