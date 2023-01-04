@@ -94,3 +94,39 @@ html {
     font-size: 18px;
     font-weight: 700;
 }
+
+.button-play {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.button-play-link {
+    text-decoration: none;
+    padding: 10px 80px;
+    background: #91C788;
+    color: #52734D;
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 10px;
+}
+
+.button-play-link:hover {
+    background: #52734D;
+    color: #FEFFDE;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 20px;
+    text-align: center;
+    color: #52734D;
+    font-size: 16px;
+}
+
+.github-link {
+    font-weight: 700;
+    color: #52734D;
+}
