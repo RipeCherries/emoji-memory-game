@@ -16,7 +16,8 @@ const state = {
 }
 
 const generateGame = () => {
-    const size = Number(selectors.board.getAttribute("data-size"));
+    const size = localStorage.getItem("size");
+    localStorage.clear();
     
     if (size % 2 !== 0) {
         throw new Error("The size of the board must be an even number!");
@@ -46,7 +47,7 @@ const pickRandom = (array, size) => {
     const clonedArray = [...array];
     const randomPicks = [];
 
-    for (var i = 0; i < size; ++i) {
+    for (let i = 0; i < size; ++i) {
         const randomIndex = Math.floor(Math.random() * clonedArray.length);
         randomPicks.push(clonedArray[randomIndex]);
         clonedArray.splice(randomIndex, 1);
@@ -58,7 +59,7 @@ const pickRandom = (array, size) => {
 const shuffle = (array) => {
     const clonedArray = [...array];
 
-    for (var i = clonedArray.length - 1; i > 0; --i) {
+    for (let i = clonedArray.length - 1; i > 0; --i) {
         const randomIndex = Math.floor(Math.random() * (i + 1));
         
         const original = clonedArray[i];
@@ -73,8 +74,6 @@ const attachEventListeners = () => {
     document.addEventListener('click', event => {
         const eventTarget = event.target;
         const eventParent = eventTarget.parentElement;
-
-        console.log(eventTarget.nodeName);
 
         if (eventTarget.className.includes("card") && !eventParent.className.includes("flipped")) {
             flipCard(eventParent);
@@ -121,7 +120,7 @@ const flipCard = (card) => {
             `;
         
             clearInterval(state.loop);
-        }, 500);
+        }, 1000);
     }
 }
 
