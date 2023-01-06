@@ -28,7 +28,7 @@ const generateGame = () => {
     const items = shuffle([...picks, ...picks]);
 
     const cards = `
-        <div class="board" style="grid-template-columns: repeat(${size}, auto)">
+        <div class="board" style="grid-template-columns: repeat(${size}, minmax(20px, 250px)); grid-template-rows: repeat(${size}, minmax(20px, 250px));">
             ${items.map(item => `
                 <div class="card">
                     <div class="card-front"></div>
