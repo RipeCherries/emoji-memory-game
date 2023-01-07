@@ -71,7 +71,6 @@ const shuffle = (array) => {
 }
 
 const handleClick = (event) => {
-    console.log(event);
     const eventTarget = event.target;
     const eventParent = eventTarget.parentElement;
 
