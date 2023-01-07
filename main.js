@@ -10,4 +10,5 @@ const changeSize = () => {
 const setSize = () => {
     localStorage.clear();
     localStorage.setItem("size", inputSlider.value);
+    inputSlider.value = "6";
 }
