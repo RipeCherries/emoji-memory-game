@@ -15,6 +15,13 @@ const state = {
     loop: null
 }
 
+const fontSizes = {
+    "4": 36,
+    "6": 30,
+    "8": 24,
+    "10": 18
+}
+
 const generateGame = () => {
     const size = localStorage.getItem("size");
     localStorage.clear();
@@ -32,7 +39,7 @@ const generateGame = () => {
             ${items.map(item => `
                 <div class="card">
                     <div class="card-front"></div>
-                    <div class="card-back">${item}</div>
+                    <div class="card-back" style="font-size: ${fontSizes[size]}px">${item}</div>
                 </div>
             `).join("")}
         </div>
