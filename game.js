@@ -4,7 +4,9 @@ const selectors = {
     win: document.querySelector(".win"),
     moves: document.querySelector(".moves"),
     time: document.querySelector(".time"),
-    start: document.querySelector(".start")
+    start: document.querySelector(".start"),
+    hint: document.querySelector(".hint"),
+    hintCount: document.querySelector(".hint-count")
 }
 
 const state = {
@@ -12,6 +14,7 @@ const state = {
     flippedCards: 0,
     totalFlips: 0,
     totalTime: 0,
+    hintCount: 3,
     loop: null
 }
 
@@ -88,8 +91,10 @@ const handleClick = (event) => {
 
     if (eventTarget.className.includes("card") && !eventParent.className.includes("flipped")) {
         flipCard(eventParent);
-    } else if (eventTarget.nodeName === "BUTTON" && !eventTarget.className.includes("disabled")) {
-        startGame();
+    // } else if (eventTarget.nodeName === "BUTTON" && !eventTarget.className.includes("disabled")) {
+    //     startGame();
+    } else if (eventTarget.className.includes("hint") && !eventTarget.className.includes("disabled")) {
+        showHint();
     }
 }
 
@@ -137,6 +142,34 @@ const flipCard = (card) => {
         }, 1000);
         document.removeEventListener("click", handleClick);
     }
+}
+
+const flipCardsforHint = () => {
+    cards = document.querySelectorAll(".card:not(.matched)");
+        
+    cards.forEach(card => {
+        card.classList.add("flipped");
+    });
+
+    setTimeout(() => {
+        cards.forEach(card => {
+            card.classList.remove("flipped");
+        });
+    }, 3000);
+}
+
+const showHint = () => {
+    if (state.hintCount > 0) {
+        flipCardsforHint();
+        state.hintCount -= 1;
+    }
+    
+    if (state.hintCount == 0) {
+        selectors.hint.classList.add("disabled");
+        selectors.hintCount.classList.add("disabled");
+    }
+
+    selectors.hintCount.innerText = state.hintCount;
 }
 
 const flipBackCards = () => {

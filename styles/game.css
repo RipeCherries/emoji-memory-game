@@ -20,7 +20,8 @@ html {
 
 .controls {
     display: flex;
-    gap: 20px;
+    max-height: 45px;
+    width: 500px;
     margin-bottom: 20px;
 }
 
@@ -33,15 +34,43 @@ html {
     cursor: pointer;
     font-size: 18px;
     font-weight: 700;
-}
-
-.disabled {
-    background: #91C788;
+    width: 100px;
 }
 
 .stats {
     color: #52734D;
     font-size: 16px;
+    margin-left: 20px;
+}
+
+.hint {
+    background: #52734D;
+    color: #FEFFDE;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    width: 100px;
+    margin-left: 143px;
+}
+
+.hint-count {
+    background: #52734D;
+    color: #FEFFDE;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px 0;
+    border-left: 3px solid #FEFFDE;
+    border-radius: 0 5px 5px 0;
+    width: 50px;
+    cursor: pointer;
+}
+
+.disabled {
+    background: #91C788;
 }
 
 .game-board {
