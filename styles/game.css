@@ -156,3 +156,18 @@ html {
     line-height: 1.5;
     color: #FEFFDE;
 }
+
+.button-back {
+    margin-top: 350px;
+    text-align: center;
+}
+
+.button-back-link {
+    text-decoration: none;
+    padding: 10px 80px;
+    background: #52734D;
+    color: #FEFFDE;
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 10px;
+}

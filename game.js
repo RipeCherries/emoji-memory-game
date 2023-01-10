@@ -135,6 +135,9 @@ const flipCard = (card) => {
                     Moves: ${state.totalFlips} </br>
                     Time: ${state.totalTime} sec <br>
                 </span>
+                <div class="button-back">
+                    <a href="index.html" class="button-back-link">GO BACK</a>
+                </div>
             `;
         
             clearInterval(state.loop);
