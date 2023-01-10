@@ -27,7 +27,6 @@ const fontSizes = {
 
 const generateGame = () => {
     const size = localStorage.getItem("size");
-    localStorage.clear();
     
     if (size % 2 !== 0) {
         throw new Error("The size of the board must be an even number!");
