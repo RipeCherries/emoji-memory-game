@@ -90,8 +90,8 @@ const handleClick = (event) => {
 
     if (eventTarget.className.includes("card") && !eventParent.className.includes("flipped")) {
         flipCard(eventParent);
-    // } else if (eventTarget.nodeName === "BUTTON" && !eventTarget.className.includes("disabled")) {
-    //     startGame();
+    } else if (eventTarget.className.includes("start") && !eventTarget.className.includes("disabled")) {
+        startGame();
     } else if (eventTarget.className.includes("hint") && !eventTarget.className.includes("disabled")) {
         showHint();
     }
