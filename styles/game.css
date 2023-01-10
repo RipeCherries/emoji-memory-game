@@ -41,6 +41,7 @@ html {
     color: #52734D;
     font-size: 16px;
     margin-left: 20px;
+    width: 150px;
 }
 
 .hint {
@@ -53,7 +54,7 @@ html {
     font-size: 18px;
     font-weight: 700;
     width: 100px;
-    margin-left: 143px;
+    margin-left: 100px;
 }
 
 .hint-count {
