@@ -11,4 +11,6 @@ const setSize = () => {
     localStorage.clear();
     localStorage.setItem("size", inputSlider.value);
     inputSlider.value = "6";
+    sliderValue[0].textContent = "6";
+    sliderValue[1].textContent = "6";
 }
