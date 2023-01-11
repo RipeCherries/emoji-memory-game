@@ -148,6 +148,9 @@ const flipCard = (card) => {
 
 const flipCardsforHint = () => {
     cards = document.querySelectorAll(".card:not(.matched)");
+
+    selectors.hint.classList.add("disabled");
+    selectors.hintCount.classList.add("disabled");
         
     cards.forEach(card => {
         card.classList.add("flipped");
@@ -157,6 +160,9 @@ const flipCardsforHint = () => {
         cards.forEach(card => {
             card.classList.remove("flipped");
         });
+        
+        selectors.hint.classList.remove("disabled");
+        selectors.hintCount.classList.remove("disabled");
     }, 3000);
 }
 
@@ -167,8 +173,10 @@ const showHint = () => {
     }
     
     if (state.hintCount == 0) {
-        selectors.hint.classList.add("disabled");
-        selectors.hintCount.classList.add("disabled");
+        setTimeout(() => {
+            selectors.hint.classList.add("disabled");
+            selectors.hintCount.classList.add("disabled");
+        }, 3000);
     }
 
     selectors.hintCount.innerText = state.hintCount;
